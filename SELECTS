@@ -1,0 +1,27 @@
+use appexcercices;
+/*Seleccionar los nombres y apellidos de los usuarios que han registrado su progreso con un peso mayor a 80kg*/
+SELECT nombre, apellido 
+FROM USUARIO, REGISTRO_PROGRESO 
+WHERE USUARIO.idUSUARIO = REGISTRO_PROGRESO.USUARIO_idUSUARIO 
+AND REGISTRO_PROGRESO.peso > '80kg';
+
+/*Mostrar las rutinas asociadas con ejercicios que tienen una dificultad clasificada como 'Alta'*/
+SELECT RUTINAS.nombre, RUTINAS.descripcion 
+FROM RUTINAS, EJERCICIOS 
+WHERE RUTINAS.EJERCICIOS_idEJERCICIOS = EJERCICIOS.idEJERCICIOS 
+AND EJERCICIOS.dificultad = 'Alta';
+
+/*Seleccionar las comidas registradas el día 2 de septiembre de 2024*/
+SELECT comida, descripcion, fecha 
+FROM ALIMENTACION 
+WHERE fecha = '2024-09-02';
+
+/*Obtener los nombres de los ejercicios que trabajan los músculos del 'core'*/
+SELECT nombre, descripcion 
+FROM EJERCICIOS 
+WHERE musculos_trabajados = 'Core';
+
+/*Seleccionar los registros de progreso que corresponden a usuarios con nivel 'Avanzado'*/
+SELECT idusuario, fecha, peso, mediciones 
+FROM REGISTRO_PROGRESO 
+WHERE nivel = 'Avanzado';
